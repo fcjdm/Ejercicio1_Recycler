@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.franciscojavier.ejrecycler.databinding.ViewPersonBinding
 
 
@@ -15,6 +16,9 @@ class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): Recy
             binding.textName.text = person.name
             binding.textPhone.text = person.phone
             binding.textEmail.text = person.email
+            Glide.with(binding.photo)
+                .load(person.photo)
+                .into(binding.photo)
         }
     }
 
