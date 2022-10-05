@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
 import com.franciscojavier.ejrecycler.databinding.ViewPersonBinding
 
 
-class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): RecyclerView.Adapter<PersonAdapter.ViewHolder>()
-{
+class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): RecyclerView.Adapter<PersonAdapter.ViewHolder>(){
+
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
         val binding = ViewPersonBinding.bind(view)
         fun bind(person: Person){
@@ -20,11 +19,15 @@ class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): Recy
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        TODO()
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_person, parent, false)
+        return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        TODO()
+        holder.bind(list[position])
+        holder.itemView.setOnClickListener{
+            listener(list[position])
+        }
     }
 
     override fun getItemCount(): Int = list.size
