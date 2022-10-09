@@ -34,5 +34,4 @@ class MainActivity : AppCompatActivity() {
             Person("Lechuga", "5235255", "email@gmail.com", photo),
             Person("Alberto", "643563634", "email@gmail.com", photo),
         )
-
 }
