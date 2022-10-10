@@ -10,9 +10,7 @@ class MainActivity : AppCompatActivity() {
     val photo: String = "https://loremflickr.com/g/240/320/person"
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
 
         binding = ActivityMainBinding.inflate(layoutInflater).apply {
             setContentView(root)
