@@ -1,12 +1,13 @@
 package com.franciscojavier.ejrecycler
 
+import android.R.attr.phoneNumber
 import android.content.Intent
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.bumptech.glide.Glide
 import com.franciscojavier.ejrecycler.databinding.ActivityDetailBinding
-import com.franciscojavier.ejrecycler.databinding.ActivityMainBinding
+
 
 class DetailActivity : AppCompatActivity() {
 
@@ -28,30 +29,19 @@ class DetailActivity : AppCompatActivity() {
             }
 
             llamarButton.setOnClickListener {
-                val sendIntent = Intent().apply {
-                    action = (Intent.ACTION_DIAL)
-                    if (person != null) {
-                        data = Uri.parse(person.phone)
-                    }
-                }
-                // Verify that the intent will resolve to an activity
-                if (sendIntent.resolveActivity(packageManager) != null) {
-                    startActivity(sendIntent)
-                }
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:" + person?.phone))
+
+                startActivity(intent);
             }
 
             emailButton.setOnClickListener {
-                val sendIntent = Intent().apply {
-                    action = Intent.ACTION_SEND
-                    if (person != null) {
-                        putExtra(Intent.EXTRA_EMAIL, person.email)
-                    }
-                    type = "text/plain"
+                val intent = Intent(Intent.ACTION_SENDTO);
+                if (person != null) {
+                    intent.data = Uri.parse("mailto:" + person.email)
                 }
-                // Verify that the intent will resolve to an activity
-                if (sendIntent.resolveActivity(packageManager) != null) {
-                    startActivity(sendIntent)
-                }
+
+                startActivity(intent);
+
             }
         }
 
