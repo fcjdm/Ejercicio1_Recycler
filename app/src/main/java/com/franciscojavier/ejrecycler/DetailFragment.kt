@@ -1,24 +1,24 @@
 package com.franciscojavier.ejrecycler
 
-import android.R.attr.phoneNumber
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import android.view.View
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.franciscojavier.ejrecycler.databinding.ActivityDetailBinding
+import com.franciscojavier.ejrecycler.databinding.FragmentDetailBinding
 
 
-class DetailActivity : AppCompatActivity() {
+class DetailFragment: Fragment(R.layout.fragment_detail) {
 
-    private lateinit var binding: ActivityDetailBinding
     companion object{
         const val EXTRA_PERSON = "person"
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityDetailBinding.inflate(layoutInflater).apply{
-            setContentView(root)
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val binding = FragmentDetailBinding.bind(view).apply {
+
             val person = intent.getParcelableExtra<Person>(EXTRA_PERSON)
             if (person != null){
                 textDetailName.text = person.name;
@@ -45,6 +45,6 @@ class DetailActivity : AppCompatActivity() {
             }
         }
 
-
     }
+
 }

@@ -1,23 +1,22 @@
 package com.franciscojavier.ejrecycler
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.franciscojavier.ejrecycler.databinding.ActivityMainBinding
+import android.view.View
+import androidx.fragment.app.Fragment
+import com.franciscojavier.ejrecycler.databinding.FragmentMainBinding
 
-class MainActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityMainBinding
+class MainFragment : Fragment(R.layout.fragment_main) {
     val photo: String = "https://loremflickr.com/g/240/320/person"
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater).apply {
-            setContentView(root)
+        val binding = FragmentMainBinding.bind(view).apply {
             recycler.adapter = PersonAdapter(persons) {
                     person->
-                val intent = Intent(this@MainActivity, DetailActivity::class.java)
-                intent.putExtra(DetailActivity.EXTRA_PERSON, person)
+                val intent = Intent(this@MainFragment, DetailFragment::class.java)
+                intent.putExtra(DetailFragment.EXTRA_PERSON, person)
                 startActivity(intent)
             }
         }
