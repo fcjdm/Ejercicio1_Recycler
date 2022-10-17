@@ -1,9 +1,10 @@
 package com.franciscojavier.ejrecycler
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.commit
 import com.franciscojavier.ejrecycler.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(R.layout.fragment_main) {
@@ -15,11 +16,15 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         val binding = FragmentMainBinding.bind(view).apply {
             recycler.adapter = PersonAdapter(persons) {
                     person->
-                val intent = Intent(this@MainFragment, DetailFragment::class.java)
-                intent.putExtra(DetailFragment.EXTRA_PERSON, person)
-                startActivity(intent)
+                parentFragmentManager.commit{
+                    replace(R.id.fragment_container_view, DetailFragment.create(person))
+                    setReorderingAllowed(true)
+                    addToBackStack(null)
+                }
+
             }
         }
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.app_name)
     }
 
     private val persons =
