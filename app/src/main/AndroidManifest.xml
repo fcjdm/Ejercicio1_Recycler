@@ -15,7 +15,7 @@
         android:theme="@style/Theme.EjRecycler"
         tools:targetApi="31" >
         <activity
-            android:name=".ui.HostActivity"
+            android:name="com.franciscojavier.ej1fragment.ui.HostActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
