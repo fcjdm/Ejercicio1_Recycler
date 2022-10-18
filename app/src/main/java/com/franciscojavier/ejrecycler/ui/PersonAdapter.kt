@@ -1,11 +1,13 @@
-package com.franciscojavier.ejrecycler
+package com.franciscojavier.ejrecycler.ui
 
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
+import com.franciscojavier.ejrecycler.model.Person
+import com.franciscojavier.ejrecycler.R
 import com.franciscojavier.ejrecycler.databinding.ViewPersonBinding
+import com.franciscojavier.ejrecycler.inflate
+import com.franciscojavier.ejrecycler.loadUrl
 
 
 class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): RecyclerView.Adapter<PersonAdapter.ViewHolder>(){

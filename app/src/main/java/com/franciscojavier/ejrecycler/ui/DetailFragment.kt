@@ -1,4 +1,4 @@
-package com.franciscojavier.ejrecycler
+package com.franciscojavier.ejrecycler.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -6,8 +6,10 @@ import android.os.Bundle
 import android.view.View
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import com.bumptech.glide.Glide
+import com.franciscojavier.ejrecycler.model.Person
+import com.franciscojavier.ejrecycler.R
 import com.franciscojavier.ejrecycler.databinding.FragmentDetailBinding
+import com.franciscojavier.ejrecycler.loadUrl
 
 
 class DetailFragment: Fragment(R.layout.fragment_detail) {

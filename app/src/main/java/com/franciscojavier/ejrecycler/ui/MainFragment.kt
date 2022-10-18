@@ -1,10 +1,12 @@
-package com.franciscojavier.ejrecycler
+package com.franciscojavier.ejrecycler.ui
 
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
+import com.franciscojavier.ejrecycler.model.Person
+import com.franciscojavier.ejrecycler.R
 import com.franciscojavier.ejrecycler.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(R.layout.fragment_main) {
