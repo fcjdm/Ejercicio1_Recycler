@@ -1,4 +1,4 @@
-package com.franciscojavier.ejrecycler.ui
+package com.franciscojavier.ej1fragment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

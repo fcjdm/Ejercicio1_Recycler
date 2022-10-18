@@ -1,13 +1,13 @@
-package com.franciscojavier.ejrecycler.ui
+package com.franciscojavier.ej1fragment.ui
 
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.franciscojavier.ejrecycler.model.Person
+import com.franciscojavier.ej1fragment.model.Person
+import com.franciscojavier.ej1fragment.inflate
+import com.franciscojavier.ej1fragment.loadUrl
 import com.franciscojavier.ejrecycler.R
 import com.franciscojavier.ejrecycler.databinding.ViewPersonBinding
-import com.franciscojavier.ejrecycler.inflate
-import com.franciscojavier.ejrecycler.loadUrl
 
 
 class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): RecyclerView.Adapter<PersonAdapter.ViewHolder>(){

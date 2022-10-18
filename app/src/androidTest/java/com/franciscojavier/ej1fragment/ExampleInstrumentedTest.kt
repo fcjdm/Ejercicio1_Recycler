@@ -1,4 +1,4 @@
-package com.franciscojavier.ejrecycler
+package com.franciscojavier.ej1fragment
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

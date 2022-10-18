@@ -1,4 +1,4 @@
-package com.franciscojavier.ejrecycler.model
+package com.franciscojavier.ej1fragment.model
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
