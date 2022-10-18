@@ -6,11 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.commit
 import com.franciscojavier.ej1fragment.model.Person
-import com.franciscojavier.ejrecycler.R
-import com.franciscojavier.ejrecycler.databinding.FragmentMainBinding
+import com.franciscojavier.ej1fragment.R
+import com.franciscojavier.ej1fragment.databinding.FragmentMainBinding
 
 class MainFragment : Fragment(R.layout.fragment_main) {
-    val photo: String = "https://loremflickr.com/g/240/320/person"
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -26,16 +25,16 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
             }
         }
-        (requireActivity() as AppCompatActivity).supportActionBar?.title = getString(R.string.app_name)
+        (requireActivity() as AppCompatActivity).supportActionBar?.title = "Ej1Fragment"
     }
 
     private val persons =
         listOf(
-            Person("Juan", "123456789", "email@gmail.com", photo),
-            Person("Fran", "532523590", "email@gmail.com", photo),
-            Person("Ismael", "321425324", "email@gmail.com", photo),
-            Person("Vali", "756744333", "email@gmail.com", photo),
-            Person("Lechuga", "5235255", "email@gmail.com", photo),
-            Person("Alberto", "643563634", "email@gmail.com", photo),
+            Person("Juan", "123456789", "email@gmail.com", "https://loremflickr.com/240/320/person"),
+            Person("Fran", "532523590", "email@gmail.com", "https://loremflickr.com/240/320/person"),
+            Person("Ismael", "321425324", "email@gmail.com", "https://loremflickr.com/240/320/person"),
+            Person("Vali", "756744333", "email@gmail.com", "https://loremflickr.com/240/320/person"),
+            Person("Lechuga", "5235255", "email@gmail.com", "https://loremflickr.com/240/320/person"),
+            Person("Alberto", "643563634", "email@gmail.com", "https://loremflickr.com/240/320/person"),
         )
 }

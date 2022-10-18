@@ -2,7 +2,7 @@ package com.franciscojavier.ej1fragment.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.franciscojavier.ejrecycler.R
+import com.franciscojavier.ej1fragment.R
 
 class HostActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

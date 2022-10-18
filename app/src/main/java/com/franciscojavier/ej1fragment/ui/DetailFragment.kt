@@ -8,8 +8,8 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import com.franciscojavier.ej1fragment.model.Person
 import com.franciscojavier.ej1fragment.loadUrl
-import com.franciscojavier.ejrecycler.R
-import com.franciscojavier.ejrecycler.databinding.FragmentDetailBinding
+import com.franciscojavier.ej1fragment.R
+import com.franciscojavier.ej1fragment.databinding.FragmentDetailBinding
 
 
 class DetailFragment: Fragment(R.layout.fragment_detail) {

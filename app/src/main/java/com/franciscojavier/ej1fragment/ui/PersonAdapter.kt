@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.franciscojavier.ej1fragment.model.Person
 import com.franciscojavier.ej1fragment.inflate
 import com.franciscojavier.ej1fragment.loadUrl
-import com.franciscojavier.ejrecycler.R
-import com.franciscojavier.ejrecycler.databinding.ViewPersonBinding
+import com.franciscojavier.ej1fragment.R
+import com.franciscojavier.ej1fragment.databinding.ViewPersonBinding
 
 
 class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): RecyclerView.Adapter<PersonAdapter.ViewHolder>(){
