@@ -16,14 +16,13 @@ class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): Recy
             binding.textName.text = person.name
             binding.textPhone.text = person.phone
             binding.textEmail.text = person.email
-            Glide.with(binding.photo)
-                .load(person.photo)
-                .into(binding.photo)
+            binding.photo.loadUrl(person.photo)
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.view_person, parent, false)
+        val view = parent.inflate(R.layout.view_person, false)
+
         return ViewHolder(view)
     }
 

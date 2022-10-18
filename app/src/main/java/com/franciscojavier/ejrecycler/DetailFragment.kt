@@ -29,9 +29,7 @@ class DetailFragment: Fragment(R.layout.fragment_detail) {
 
             if (person != null){
                 textDetailName.text = person.name;
-                Glide.with(photoDetail)
-                    .load(person.photo)
-                    .into(photoDetail)
+                photoDetail.loadUrl(person.photo)
 
             }
 
