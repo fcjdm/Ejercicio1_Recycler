@@ -7,6 +7,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.franciscojavier.ej1fragment.R
 import com.franciscojavier.ej1fragment.databinding.FragmentMainBinding
 import com.franciscojavier.ej1fragment.model.Person
@@ -49,12 +50,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
     }
 
     private fun navigateTo(person: Person) {
-        view?.let {
-            findNavController(it).navigate(
-                R.id.action_mainFragment_to_detailFragment,
-                bundleOf(DetailFragment.EXTRA_PERSON to person)
-            )
-        }
+        findNavController().navigate(
+            R.id.action_mainFragment_to_detailFragment,
+            bundleOf(DetailFragment.EXTRA_PERSON to person)
+        )
 
     }
 
