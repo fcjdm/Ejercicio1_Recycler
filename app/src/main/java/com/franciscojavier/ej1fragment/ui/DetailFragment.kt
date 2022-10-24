@@ -16,11 +16,6 @@ class DetailFragment: Fragment(R.layout.fragment_detail) {
 
     companion object{
         const val EXTRA_PERSON = "DetailActivity:person"
-
-        fun create(movie: Person): DetailFragment =
-            DetailFragment().apply {
-                arguments = bundleOf(EXTRA_PERSON to movie)
-            }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

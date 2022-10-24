@@ -9,10 +9,12 @@ import com.franciscojavier.ej1fragment.loadUrl
 import com.franciscojavier.ej1fragment.R
 import com.franciscojavier.ej1fragment.databinding.ViewPersonBinding
 
+class PersonsAdapter(val listener: (Person) -> Unit): RecyclerView.Adapter<PersonsAdapter.ViewHolder>(){
 
-class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): RecyclerView.Adapter<PersonAdapter.ViewHolder>(){
+    var persons = emptyList<Person>()
 
     class ViewHolder(view: View):RecyclerView.ViewHolder(view){
+
         val binding = ViewPersonBinding.bind(view)
         fun bind(person: Person){
             binding.textName.text = person.name
@@ -29,12 +31,14 @@ class PersonAdapter(val list:List<Person>, val listener: (Person) -> Unit): Recy
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(list[position])
+        holder.bind(persons[position])
         holder.itemView.setOnClickListener{
-            listener(list[position])
+            listener(persons[position])
         }
     }
 
-    override fun getItemCount(): Int = list.size
+    override fun getItemCount(): Int = persons.size
+
+
 
 }
